@@ -1,5 +1,7 @@
 package practice_books_management;
 
 public class Author {
-	//<write your code here>
+	int id;
+	String firstName;
+	String lastName;
 }
