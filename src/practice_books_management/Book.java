@@ -14,6 +14,19 @@ public class Book {
 	BigDecimal price;
 	CoverType coverType;
 	
+	
+public Book(int id, String name, Author[] authors, Publisher publisher, int publishingYear, int amountOfPages,
+			BigDecimal price, CoverType coverType) {
+		this.id = id;
+		this.name = name;
+		this.authors = authors;
+		this.publisher = publisher;
+		this.publishingYear = publishingYear;
+		this.amountOfPages = amountOfPages;
+		this.price = price;
+		this.coverType = coverType;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
