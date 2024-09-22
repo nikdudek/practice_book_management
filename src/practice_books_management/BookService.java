@@ -2,15 +2,70 @@ package practice_books_management;
 
 public class BookService {
     public Book[] filterBooksByAuthor(Author author, Book[] books) {
-		//<write your code here>
+    	if(author == null || books == null)
+    		return new Book[0];
+    	
+		int count = 0;
+		for(Book book : books) {
+			if(book.hasAuthor(author))
+				count++;
+		}
+		Book[] filteredBooks = new Book[count];
+		
+		int index = 0;
+		for(Book book : books) {
+			if(book.hasAuthor(author)) {
+				filteredBooks[index] = book;
+				index++;
+			}
+		}
+		
+		return filteredBooks;
 	}
 
 	public Book[] filterBooksByPublisher(Publisher publisher, Book[] books) {
-		//<write your code here>
+		if(publisher == null || books == null)
+    		return new Book[0];
+    	
+		int count = 0;
+		for(Book book : books) {
+			if(book.getPublisher().equals(publisher))
+				count++;
+		}
+		Book[] filteredBooks = new Book[count];
+		
+		int index = 0;
+		for(Book book : books) {
+			if(book.getPublisher().equals(publisher)) {
+				filteredBooks[index] = book;
+				index++;
+			}
+		}
+		
+		return filteredBooks;
 	}
 
 	public Book[] filterBooksAfterSpecifiedYear(int yearFromInclusively, Book[] books) {
-		//<write your code here>
+		if(books == null)
+    		return new Book[0];
+    	
+		int count = 0;
+		for(Book book : books) {
+			if(book.getPublishingYear() >= yearFromInclusively)
+				count++;
+		}
+		Book[] filteredBooks = new Book[count];
+		
+		int index = 0;
+		for(Book book : books) {
+			if(book.getPublishingYear() >= yearFromInclusively) {
+				filteredBooks[index] = book;
+				index++;
+			}
+		}
+		
+		return filteredBooks;
 	}
+
 	
 }
